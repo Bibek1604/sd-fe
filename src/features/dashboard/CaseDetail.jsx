@@ -141,13 +141,13 @@ export default function CaseDetail() {
         <div style={S.statRow}>
           <div style={S.statCard}>
             <div style={S.statLbl}>Best Score</div>
-            <div style={{ ...S.statBig, color: bestScore === null ? "var(--text-muted)" : scoreColor(bestScore) }}>
+            <div style={{ ...S.statBig, color: bestScore === null ? "var(--text-muted)" : everPassed ? "var(--accent-success)" : "var(--accent-danger)" }}>
               {bestScore !== null ? bestScore : "—"}
             </div>
             {bestScore !== null && (
               <div style={{ marginTop: "10px" }}>
-                <span className={bestScore >= 60 ? "badge-pass" : "badge-fail"}>
-                  {bestScore >= 60 ? "Passed" : "Failed"}
+                <span className={everPassed ? "badge-pass" : "badge-fail"}>
+                  {everPassed ? "Passed" : "Failed"}
                 </span>
               </div>
             )}
